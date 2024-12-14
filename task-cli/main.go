@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kobiedanquah/task-cli/cmd"
+	"github.com/sixty4bee/task-cli/cmd"
 )
 
 func main() {

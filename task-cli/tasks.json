@@ -1,1 +1,30 @@
-[{"id":1,"description":"Get groceries from Mr. Chong's","status":"todo","createdAt":"2024-12-14T21:25:06.074304631Z","updatedAt":"2024-12-14T21:25:06.074304804Z"}]
+[
+	{
+		"id": 1,
+		"description": "Get groceries from Mr. Chong's",
+		"status": "todo",
+		"createdAt": "2024-12-14T21:25:06.074304631Z",
+		"updatedAt": "2024-12-14T21:25:06.074304804Z"
+	},
+	{
+		"id": 2,
+		"description": "wash all clothes in basket",
+		"status": "todo",
+		"createdAt": "2024-12-14T21:35:06.152471589Z",
+		"updatedAt": "2024-12-14T21:35:06.152471707Z"
+	},
+	{
+		"id": 3,
+		"description": "play ball with justin",
+		"status": "todo",
+		"createdAt": "2024-12-14T21:36:14.112497795Z",
+		"updatedAt": "2024-12-14T21:36:14.112497905Z"
+	},
+	{
+		"id": 4,
+		"description": "play ball with justin",
+		"status": "todo",
+		"createdAt": "2024-12-14T21:41:08.087967052Z",
+		"updatedAt": "2024-12-14T21:41:08.087967159Z"
+	}
+]

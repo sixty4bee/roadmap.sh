@@ -5,7 +5,8 @@ import (
 	"flag"
 	"time"
 
-	"github.com/kobiedanquah/task-cli/task"
+	tasker "github.com/sixty4bee/task-cli/task"
+
 )
 
 type AddCommand struct {
@@ -34,7 +35,6 @@ func (c *AddCommand) Run() error {
 	}
 
 	task := &tasker.Task{
-		Id:          8,
 		Description: c.fs.Arg(0),
 		Status:      "todo",
 		CreatedAt:   time.Now().UTC(),

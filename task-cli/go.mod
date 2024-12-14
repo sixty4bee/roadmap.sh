@@ -1,3 +1,3 @@
-module github.com/kobiedanquah/task-cli
+module github.com/sixty4bee/task-cli
 
 go 1.23.2

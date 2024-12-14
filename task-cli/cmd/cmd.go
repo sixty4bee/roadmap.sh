@@ -20,6 +20,7 @@ func Root(args []string) error {
 
 	commands := []Runner{
 		NewAddCommand(),
+		NewListCommand(),
 	}
 
 	subcommand := args[0]
