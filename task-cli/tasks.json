@@ -1,16 +1,1 @@
-[
-  {
-    "id": 8,
-    "description": "Something I have to get done",
-    "status": "todo",
-    "createdAt": "",
-    "updatedAt": ""
-  },
-  {
-    "id": 9,
-    "description": "Something that has already been done",
-    "status": "complete",
-    "createdAt": "",
-    "updatedAt": ""
-  }
-]
+[{"id":1,"description":"Get groceries from Mr. Chong's","status":"todo","createdAt":"2024-12-14T21:25:06.074304631Z","updatedAt":"2024-12-14T21:25:06.074304804Z"}]

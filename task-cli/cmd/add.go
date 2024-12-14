@@ -3,14 +3,13 @@ package cmd
 import (
 	"errors"
 	"flag"
-	"fmt"
 	"time"
 
 	"github.com/kobiedanquah/task-cli/task"
 )
 
 type AddCommand struct {
-	fs          *flag.FlagSet
+	fs *flag.FlagSet
 }
 
 func NewAddCommand() *AddCommand {
@@ -30,20 +29,18 @@ func (c *AddCommand) Init(args []string) error {
 }
 
 func (c *AddCommand) Run() error {
-	if len(c.fs.Args()) < 1{
+	if len(c.fs.Args()) < 1 {
 		return errors.New("add command requires the description of task")
 	}
 
-	task := task.Task{
-		Id: 8,
+	task := &tasker.Task{
+		Id:          8,
 		Description: c.fs.Arg(0),
-		Status: "todo",
-		CreatedAt: time.Now(),
-		UpdatedAt: time.Now(),
+		Status:      "todo",
+		CreatedAt:   time.Now().UTC(),
+		UpdatedAt:   time.Now().UTC(),
 	}
+	
 
-	fmt.Printf("task: %v\n", task)
-	
-	
-	return nil
+	return tasker.Add(task)
 }
