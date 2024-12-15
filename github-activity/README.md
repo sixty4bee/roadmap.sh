@@ -1,4 +1,4 @@
-# GitHub Activity CLI
+# [GitHub Activity CLI](https://roadmap.sh/projects/github-user-activity)
 
 A command-line tool that fetches and displays GitHub user activity events.
 
