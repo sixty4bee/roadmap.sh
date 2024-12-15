@@ -2,6 +2,7 @@ package tasker
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"path/filepath"
 	"slices"
@@ -46,38 +47,57 @@ func writeTasks(tasks []*Task) error {
 	return nil
 }
 
-func Add(task *Task) error {
+func Add(task *Task) (uint, error) {
 	tasks, err := readTasks()
 	if err != nil {
-		return err
+		return 0, err
 	}
 
 	var highest uint
-	for _, v := range tasks {
-		if v.Id > highest {
-			highest = v.Id
-		}
+
+	if len(tasks) > 0 {
+		highest = tasks[len(tasks)-1].Id
 	}
 
 	task.Id = highest + 1
 
 	tasks = append(tasks, task)
 
-	return writeTasks(tasks)
+	err = writeTasks(tasks)
+	if err != nil {
+		return 0, err
+	}
+
+	return task.Id, nil
 }
 
-func Update(id uint, description string) error {
+
+func Update(id uint, value string, update string) error {
 
 	tasks, err := readTasks()
 	if err != nil {
 		return err
 	}
 
-	for _, v := range tasks {
-		if v.Id == id {
-			v.Description = description
-			break
+	switch update {
+	case "status":
+		for _, v := range tasks {
+			if v.Id == id {
+				v.Status = value
+				v.UpdatedAt = time.Now()
+				break
+			}
 		}
+	case "description":
+		for _, v := range tasks {
+			if v.Id == id {
+				v.Description = value
+				v.UpdatedAt = time.Now()
+				break
+			}
+		}
+	default:
+		return fmt.Errorf("invalid update value: %s", update)
 	}
 
 	return writeTasks(tasks)

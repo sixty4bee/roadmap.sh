@@ -11,7 +11,6 @@ type Runner interface {
 	Name() string
 }
 
-
 func Root(args []string) error {
 
 	if len(args) < 1 {
@@ -21,6 +20,9 @@ func Root(args []string) error {
 	commands := []Runner{
 		NewAddCommand(),
 		NewListCommand(),
+		NewUpdateCommand(),
+		NewMarkDoneCommand(),
+		NewMarkProgressCommand(),
 	}
 
 	subcommand := args[0]

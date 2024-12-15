@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	tasker "github.com/sixty4bee/task-cli/task"
+	"github.com/sixty4bee/task-cli/tasker"
 )
 
 type ListCommand struct {
@@ -35,8 +35,7 @@ func (c *ListCommand) Run() error {
 
 
 	for _, task := range tasks {
-		// TODO: format todo list output
-		fmt.Println(task)
+		fmt.Printf("id: %d\tdescription: %s\tstatus: %s\n", task.Id, task.Description, task.Status)
 	}
 
 	return nil

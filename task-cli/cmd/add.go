@@ -3,10 +3,10 @@ package cmd
 import (
 	"errors"
 	"flag"
+	"fmt"
 	"time"
 
-	tasker "github.com/sixty4bee/task-cli/task"
-
+	"github.com/sixty4bee/task-cli/tasker"
 )
 
 type AddCommand struct {
@@ -40,7 +40,13 @@ func (c *AddCommand) Run() error {
 		CreatedAt:   time.Now().UTC(),
 		UpdatedAt:   time.Now().UTC(),
 	}
-	
 
-	return tasker.Add(task)
+	id, err := tasker.Add(task)
+	if err != nil {
+		return err
+	}
+
+	fmt.Printf("Task added successfully (ID: %d)\n", id)
+
+	return nil
 }
