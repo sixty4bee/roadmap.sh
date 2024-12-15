@@ -7,13 +7,6 @@
 		"updatedAt": "2024-12-15T07:50:07.822572877Z"
 	},
 	{
-		"id": 3,
-		"description": "new task",
-		"status": "todo",
-		"createdAt": "2024-12-15T06:16:38.736388324Z",
-		"updatedAt": "2024-12-15T06:16:38.736388428Z"
-	},
-	{
 		"id": 4,
 		"description": "something new",
 		"status": "todo",

@@ -23,6 +23,7 @@ func Root(args []string) error {
 		NewUpdateCommand(),
 		NewMarkDoneCommand(),
 		NewMarkProgressCommand(),
+		NewDeleteCommand(),
 	}
 
 	subcommand := args[0]
