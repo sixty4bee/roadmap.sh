@@ -33,7 +33,7 @@ func (c *MarkProgressCommand) Run() error {
 		return err
 	}
 
-	err = tasker.Update(uint(id), "in progress", "status")
+	err = tasker.Update(uint(id), "in-progress", "status")
 	if err != nil {
 		return err
 	}

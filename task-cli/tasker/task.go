@@ -71,7 +71,6 @@ func Add(task *Task) (uint, error) {
 	return task.Id, nil
 }
 
-
 func Update(id uint, value string, update string) error {
 
 	tasks, err := readTasks()
@@ -116,6 +115,23 @@ func Delete(id uint) error {
 	return writeTasks(tasks)
 }
 
-func GetAll() ([]*Task, error) {
-	return readTasks()
+func GetAll(filter string) ([]*Task, error) {
+	tasks, err := readTasks()
+	if err != nil {
+		return nil, err
+	}
+
+	if filter != "" {
+		var filteredTasks []*Task
+		for _, v := range tasks {
+			if v.Status == filter {
+				filteredTasks = append(filteredTasks, v)
+			}
+		}
+
+		return filteredTasks, nil
+	}
+
+	return tasks, nil
+
 }

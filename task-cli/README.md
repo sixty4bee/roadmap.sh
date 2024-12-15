@@ -1,3 +1,7 @@
+# [Task Tracker Project](https://roadmap.sh/projects/task-tracker)
+
+Task tracker is a CLI project used to track and manage tasks.
+
 ## Build and Install
 
 ```sh
@@ -35,3 +39,4 @@ task-cli list done
 task-cli list todo
 task-cli list in-progress
 ```
+

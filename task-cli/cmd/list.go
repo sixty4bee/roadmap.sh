@@ -28,11 +28,12 @@ func (c *ListCommand) Init(args []string) error {
 
 func (c *ListCommand) Run() error {
 
-	tasks, err :=tasker.GetAll()
+	status := c.fs.Arg(0)
+
+	tasks, err :=tasker.GetAll(status)
 	if err != nil {
 		return err
 	}
-
 
 	for _, task := range tasks {
 		fmt.Printf("id: %d\tdescription: %s\tstatus: %s\n", task.Id, task.Description, task.Status)
